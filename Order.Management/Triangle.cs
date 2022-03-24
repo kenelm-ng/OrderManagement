@@ -6,6 +6,8 @@ namespace Order.Management
 {
     class Triangle : Shape
     {
+        //Make it constant not variable
+        //Varibale name can be just price
         public int TrianglePrice = 2;
         public Triangle(int numberOfRedTriangles, int numberOfBlueTriangles, int numberOfYellowTriangles)
         {
@@ -16,7 +18,6 @@ namespace Order.Management
             base.NumberOfBlueShape = numberOfBlueTriangles;
             base.NumberOfYellowShape = numberOfYellowTriangles;
         }
-
         public override int Total()
         {
             return RedTrianglesTotal() + BlueTrianglesTotal() + YellowTrianglesTotal();

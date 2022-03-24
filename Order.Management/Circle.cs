@@ -6,6 +6,8 @@ namespace Order.Management
 {
     class Circle : Shape
     {
+        //Make it constant not variable
+        //Varibale name can be just price
         public int circlePrice = 3;
         public Circle(int red, int blue, int yellow)
         {
