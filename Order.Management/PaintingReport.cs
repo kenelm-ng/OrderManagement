@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+// KN: Remove unused package
 using System.Text;
 
+
+// KN: CuttingListReport, InvoiceReport, PaitingReport can be rewritten into one class, CuttingListReport, InvoiceReport, PaitingReport can be inhertied from it with its own methods and properties.
 namespace Order.Management
 {
     class PaintingReport : Order
     {
+        // KN: Make it private
         public int tableWidth = 73;
         public PaintingReport(string customerName, string customerAddress, string dueDate, List<Shape> shapes)
         {
@@ -31,12 +35,14 @@ namespace Order.Management
             PrintRow("Circle", base.OrderedBlocks[2].NumberOfRedShape.ToString(), base.OrderedBlocks[2].NumberOfBlueShape.ToString(), base.OrderedBlocks[2].NumberOfYellowShape.ToString());
             PrintLine();
         }
-       
+
+        // KN: should be a private method
         public void PrintLine()
         {
             Console.WriteLine(new string('-', tableWidth));
         }
 
+        // KN: should be a private method
         public void PrintRow(params string[] columns)
         {
             int width = (tableWidth - columns.Length) / columns.Length;
@@ -50,6 +56,7 @@ namespace Order.Management
             Console.WriteLine(row);
         }
 
+        // KN: should be a private method
         public string AlignCentre(string text, int width)
         {
             text = text.Length > width ? text.Substring(0, width - 3) + "..." : text;

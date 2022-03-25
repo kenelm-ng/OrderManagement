@@ -1,4 +1,8 @@
-﻿using System;
+﻿// KN: Add readme to the solution
+// KN: Rename main program name as OrderManagementProgram.cs
+// KN: Shapes, Colours and Prices can be stored in a dictionaries - suggest in a Json file in this case
+
+using System;
 using System.Collections.Generic;
 
 namespace Order.Management
@@ -19,6 +23,7 @@ namespace Order.Management
             PaintingReport(customerName, address, dueDate, orderedShapes);
         }
         
+        // KN: Create an maxtrix for all types and colours of the shape and loop though for input
         // Order Circle Input
         public static Circle OrderCirclesInput()
         {
@@ -32,7 +37,7 @@ namespace Order.Management
             Circle circle = new Circle(redCircle, blueCircle, yellowCircle);
             return circle;
         }
-        
+
         // Order Squares Input
         public static Square OrderSquaresInput()
         {
@@ -50,7 +55,9 @@ namespace Order.Management
         // Order Triangles Input
         public static Triangle OrderTrianglesInput()
         {
+            // KN: add validation for integer, and maximum number allowed
             Console.Write("\nPlease input the number of Red Triangles: ");
+            // KN: If(!isInteger(userIput()), throw exception, repeat to ask for input
             int redTriangle = Convert.ToInt32(userInput());
             Console.Write("Please input the number of Blue Triangles: ");
             int blueTriangle = Convert.ToInt32(userInput());
@@ -65,6 +72,7 @@ namespace Order.Management
         public static string userInput()
         {
             string input = Console.ReadLine();
+            // KN: Add more validation and take care of special characters
             while (string.IsNullOrEmpty(input))
             {
                 Console.WriteLine("please enter valid details");
@@ -102,7 +110,9 @@ namespace Order.Management
             string customerName = userInput();
             Console.Write("Please input your Address: ");
             string address = userInput();
+            // KN: Add example date format
             Console.Write("Please input your Due Date: ");
+            // KN: Add date validation and use datetime format
             string dueDate = userInput();
             return (customerName, address, dueDate);
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Remove unsed packages
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace Order.Management
 {
     abstract class Order
     {
+        // All can be private
         public string CustomerName { get; set; }
         public string Address { get; set; }
         public string DueDate { get; set; }

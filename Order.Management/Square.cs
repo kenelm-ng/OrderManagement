@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Remove unused packages
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,14 +7,13 @@ namespace Order.Management
 {
     class Square : Shape
     {
-        //Varibale name can be just price
-        //We only need one object called Shape
-        //Potentiall reuse object Shape to create Square Triangle and Circle object
+        //Potentially reuse object Shape and for particular shape it can be inherited from it 
         //Extend the object by giving colour, shapre and price and additional charge property
 
         public int SquarePrice = 1;
         public Square(int numberOfRedSquares, int numberOfBlueSquares, int numberOfYellowSquares)
         {
+            // Make it constant
             Name = "Square";
             base.Price = SquarePrice;
             //make it constant 
